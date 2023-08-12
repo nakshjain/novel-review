@@ -6,97 +6,97 @@ export class NovelsServices{
       id:'img1',
       name:'Temp',
       review:'This small site is a result of a hard-working process of one person. Server and domain have been paid with my own funds. All new feature development occasionally happens in the after-work hours only and driven by its owner\'s desperate passion. If you do like this site or it has helped you by any means, you can support this resource financially in any possible way you prefer. All funds will be immediately invested in the future support and new feature development. Thank you a lot and May the Force be with you!',
-      imageLink:'assets/images/naksh/img1.jpg'
+      imageLink:'assets/images/novel-cover-pages/img1.jpg'
     },
     {
       id:'img2',
       name:'Temp',
       review:'This small site is a result of a hard-working process of one person. Server and domain have been paid with my own funds. All new feature development occasionally happens in the after-work hours only and driven by its owner\'s desperate passion. If you do like this site or it has helped you by any means, you can support this resource financially in any possible way you prefer. All funds will be immediately invested in the future support and new feature development. Thank you a lot and May the Force be with you!',
-      imageLink:'assets/images/naksh/img2.jpg'
+      imageLink:'assets/images/novel-cover-pages/img2.jpg'
     },
     {
       id:'img3',
       name:'Temp',
       review:'This small site is a result of a hard-working process of one person. Server and domain have been paid with my own funds. All new feature development occasionally happens in the after-work hours only and driven by its owner\'s desperate passion. If you do like this site or it has helped you by any means, you can support this resource financially in any possible way you prefer. All funds will be immediately invested in the future support and new feature development. Thank you a lot and May the Force be with you!',
-      imageLink:'assets/images/naksh/img3.jpg'
+      imageLink:'assets/images/novel-cover-pages/img3.jpg'
     },
     {
       id:'img4',
       name:'Temp',
       review:'This small site is a result of a hard-working process of one person. Server and domain have been paid with my own funds. All new feature development occasionally happens in the after-work hours only and driven by its owner\'s desperate passion. If you do like this site or it has helped you by any means, you can support this resource financially in any possible way you prefer. All funds will be immediately invested in the future support and new feature development. Thank you a lot and May the Force be with you!',
-      imageLink:'assets/images/naksh/img4.jpg'
+      imageLink:'assets/images/novel-cover-pages/img4.jpg'
     },
     {
       id:'img5',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img5.jpg'
+      imageLink:'assets/images/novel-cover-pages/img5.jpg'
     },
     {
       id:'img6',
       name:'Temp',
       review:'This small site is a result of a hard-working process of one person. Server and domain have been paid with my own funds. All new feature development occasionally happens in the after-work hours only and driven by its owner\'s desperate passion. If you do like this site or it has helped you by any means, you can support this resource financially in any possible way you prefer. All funds will be immediately invested in the future support and new feature development. Thank you a lot and May the Force be with you!',
-      imageLink:'assets/images/naksh/img6.jpg'
+      imageLink:'assets/images/novel-cover-pages/img6.jpg'
     },
     {
       id:'img7',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img7.jpg'
+      imageLink:'assets/images/novel-cover-pages/img7.jpg'
     },
     {
       id:'img8',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img8.jpg'
+      imageLink:'assets/images/novel-cover-pages/img8.jpg'
     },
     {
       id:'img9',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img9.jpg'
+      imageLink:'assets/images/novel-cover-pages/img9.jpg'
     },
     {
       id:'img10',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img10.jpg'
+      imageLink:'assets/images/novel-cover-pages/img10.jpg'
     },
     {
       id:'img11',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img11.jpg'
+      imageLink:'assets/images/novel-cover-pages/img11.jpg'
     },
     {
       id:'img12',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img12.jpg'
+      imageLink:'assets/images/novel-cover-pages/img12.jpg'
     },
     {
       id:'img13',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img13.jpg'
+      imageLink:'assets/images/novel-cover-pages/img13.jpg'
     },
     {
       id:'img14',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img14.jpg'
+      imageLink:'assets/images/novel-cover-pages/img14.jpg'
     },
     {
       id:'img15',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img15.jpg'
+      imageLink:'assets/images/novel-cover-pages/img15.jpg'
     },
     {
       id:'img16',
       name:'Temp',
       review:'Review',
-      imageLink:'assets/images/naksh/img16.jpg'
+      imageLink:'assets/images/novel-cover-pages/img16.jpg'
     },
   ]
 }
