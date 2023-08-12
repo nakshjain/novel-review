@@ -7,4 +7,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Novel-Reviews';
+  navbarHeader: any[] = [
+    {
+      id: 'home',
+      name: 'Home',
+      link: 'home',
+    },
+    {
+      id: 'genre',
+      name: 'Genre',
+      link: 'genre',
+    },
+    {
+      id: 'novels',
+      name: 'Novels',
+      link: 'novels',
+    },
+    {
+      id: 'novels',
+      name: 'Novels',
+      link: 'novels',
+    },
+  ];
 }

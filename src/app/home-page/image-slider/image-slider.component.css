@@ -1,0 +1,20 @@
+.title{
+  font-size: 150%;
+  padding: 1%;
+  line-height: 1.25vw;
+  color: #e5e5e5;
+  font-weight: 500;
+}
+.slick-slider {
+  width: 95vw;
+  height: auto;
+}
+.image{
+  border-radius: 1vw;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.slide{
+  padding: 0 0.2%;
+}
