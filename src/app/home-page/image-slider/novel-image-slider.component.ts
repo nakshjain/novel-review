@@ -12,7 +12,6 @@ export class NovelImageSliderComponent {
     "slidesToScroll": 1,
     "autoplay":true,
     "autoplaySpeed": 900,
-    // "dots": true,
     "infinite": true
   };
   slideConfigMobile = {
@@ -20,7 +19,6 @@ export class NovelImageSliderComponent {
     "slidesToScroll": 1,
     "autoplay":true,
     "autoplaySpeed": 900,
-    // "dots": true,
     "infinite": true
   };
 

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {NovelsServices} from "../../api/novel-service/novels.services";
-import {Novel} from "../../home-page/image-slider/novels.types";
 
 @Component({
   selector: 'app-novel',
