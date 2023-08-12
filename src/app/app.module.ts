@@ -10,15 +10,19 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import { HomePageComponent } from './home-page/home-page.component';
-import { ImageSliderComponent } from './home-page/image-slider/image-slider.component';
+import { NovelImageSliderComponent } from './home-page/image-slider/novel-image-slider.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgxUiLoaderModule} from "ngx-ui-loader";
+import {NovelsComponent} from "./novels/novels.component";
+import {NovelComponent} from './novels/novel/novel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    ImageSliderComponent
+    NovelImageSliderComponent,
+    NovelsComponent,
+    NovelComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
       <mat-icon class="mat-icon">menu</mat-icon>
     </button>
     <a routerLink="home" class="nav-heading">
-      <p>Novel Reviews</p>
+      <p>{{title}}</p>
     </a>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -24,7 +24,7 @@
   <mat-sidenav-content>
     <div>
       <ngx-ui-loader fgsColor="#353535" pbColor="#353535"></ngx-ui-loader>
-      <app-home-page></app-home-page>
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
