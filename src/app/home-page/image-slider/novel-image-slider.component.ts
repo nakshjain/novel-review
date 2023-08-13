@@ -23,7 +23,7 @@ export class NovelImageSliderComponent {
   };
 
   @Input()
-  title: string=''
+  genre: string=''
 
   @Input()
   images :Novel[]=[]

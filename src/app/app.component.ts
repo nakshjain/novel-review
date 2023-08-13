@@ -23,10 +23,5 @@ export class AppComponent {
       name: 'Novels',
       link: 'novels',
     },
-    {
-      id: 'novels',
-      name: 'Novels',
-      link: 'novels',
-    },
   ];
 }

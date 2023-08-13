@@ -16,6 +16,9 @@ import {NgxUiLoaderModule} from "ngx-ui-loader";
 import {NovelsComponent} from "./novels/novels.component";
 import {NovelComponent} from './novels/novel/novel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NovelsServices} from "./api/novel-service/novels.services";
+import {FormsModule} from "@angular/forms";
+import { SearchComponent } from './novels/search/search.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomePageComponent,
     NovelImageSliderComponent,
     NovelsComponent,
-    NovelComponent
+    NovelComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
@@ -38,7 +43,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgxUiLoaderModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [NovelsServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

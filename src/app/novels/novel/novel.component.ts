@@ -11,7 +11,6 @@ import {NovelsServices} from "../../api/novel-service/novels.services";
 export class NovelComponent {
   novel: any;
   novelId: any;
-  novelRating:any;
   constructor(private activatedRoute: ActivatedRoute, private novelsServices:NovelsServices) {
   }
 

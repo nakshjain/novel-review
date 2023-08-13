@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'novels', component: NovelsComponent},
+  { path: 'novels/:genre', component: NovelsComponent},
   { path: 'novels/novel/:id', component: NovelComponent}
 ];
 

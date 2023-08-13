@@ -1,4 +1,14 @@
-<div class="title">{{title}}</div>
+<div class="header">
+  <div class="title">{{genre}}</div>
+  <div >
+    <a routerLink="/novels/{{genre}}" class="view-all">
+      <div class="view-all-heading">View All</div>
+      <div class="mat-icon-main">
+        <mat-icon class="mat-icon">arrow_forward</mat-icon>
+      </div>
+    </a>
+  </div>
+</div>
 
 <div class="desktop">
   <ngx-slick-carousel
@@ -7,7 +17,7 @@
     [config]="slideConfigDesktop"
   >
     <div ngxSlickItem *ngFor="let image of images" class="slide">
-      <a  routerLink="/novels/novel/{{image.id}}"><img src="{{ image.imageLink }}" class="novel-image" alt="{{ image.id }}" /></a>
+      <a  routerLink="/novels/novel/{{image.id}}"><img src="{{ image.imageLink }}" class="novel-image" alt="{{ image.name }}" /></a>
     </div>
   </ngx-slick-carousel>
 </div>

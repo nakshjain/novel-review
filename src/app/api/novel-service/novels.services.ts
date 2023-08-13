@@ -349,4 +349,26 @@ export class NovelsServices {
     });
     return allNovelsByGenre;
   }
+  getNovelsSearched(searchValue: string, searchParam:string){
+    let novels: Novel[]=[]
+    if(searchParam){
+      this.getNovelsByGenre(searchParam).forEach(
+        (novel)=>{
+          if(novel.id.toLocaleLowerCase().includes(searchValue)){
+            novels.push(novel)
+          }
+        }
+      )
+    }
+    else{
+      this.allNovels.forEach(
+        (novel)=>{
+          if(novel.id.toLocaleLowerCase().includes(searchValue)){
+            novels.push(novel)
+          }
+        }
+      )
+    }
+    return novels
+  }
 }
