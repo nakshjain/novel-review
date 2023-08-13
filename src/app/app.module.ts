@@ -19,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NovelsServices} from "./api/novel-service/novels.services";
 import {FormsModule} from "@angular/forms";
 import { SearchComponent } from './novels/search/search.component';
+import { FollowUsComponent } from './follow-us/follow-us.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SearchComponent } from './novels/search/search.component';
     NovelImageSliderComponent,
     NovelsComponent,
     NovelComponent,
-    SearchComponent
+    SearchComponent,
+    FollowUsComponent,
   ],
   imports: [
     BrowserModule,
