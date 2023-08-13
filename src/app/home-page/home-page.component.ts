@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {NgxUiLoaderService} from "ngx-ui-loader";
-import {Novel} from "./image-slider/novels.types";
+import {Novel, NovelsByGenre} from "./image-slider/novels.types";
 import {NovelsServices} from "../api/novel-service/novels.services";
 
 @Component({
@@ -11,7 +11,7 @@ import {NovelsServices} from "../api/novel-service/novels.services";
 })
 export class HomePageComponent {
   title='GENRE'
-  images: Novel[]=[]
+  allNovelsByGenre: NovelsByGenre[]=[]
 
   constructor(private ngxService: NgxUiLoaderService, private novelsServices:NovelsServices) {}
   ngOnInit() {
@@ -19,6 +19,6 @@ export class HomePageComponent {
     setTimeout(() => {
       this.ngxService.stop();
     }, 1000);
-    this.images=this.novelsServices.genre
+    this.allNovelsByGenre=this.novelsServices.getAllNovelsByGenre()
   }
 }

@@ -1,18 +1,6 @@
-<div>
+<div *ngFor="let genre of allNovelsByGenre">
   <app-image-slider
-    [images]="images"
-    [title]="title"
-  ></app-image-slider>
-  <app-image-slider
-    [images]="images"
-    [title]="title"
-  ></app-image-slider>
-  <app-image-slider
-    [images]="images"
-    [title]="title"
-  ></app-image-slider>
-  <app-image-slider
-    [images]="images"
-    [title]="title"
+    [images]="genre.novels"
+    [title]="genre.title"
   ></app-image-slider>
 </div>

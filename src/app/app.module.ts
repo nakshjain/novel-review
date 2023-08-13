@@ -15,6 +15,7 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgxUiLoaderModule} from "ngx-ui-loader";
 import {NovelsComponent} from "./novels/novels.component";
 import {NovelComponent} from './novels/novel/novel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {NovelComponent} from './novels/novel/novel.component';
     MatButtonModule,
     SlickCarouselModule,
     NgxUiLoaderModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
