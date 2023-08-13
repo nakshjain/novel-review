@@ -4,7 +4,7 @@ export interface Novel {
   review: string
   imageLink: string
   genre: string
-  rating: number
+  rating: string
 }
 
 export interface NovelsByGenre {

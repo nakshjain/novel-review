@@ -11,11 +11,14 @@ import {NovelsServices} from "../../api/novel-service/novels.services";
 export class NovelComponent {
   novel: any;
   novelId: any;
+  novelRating: any;
+
   constructor(private activatedRoute: ActivatedRoute, private novelsServices:NovelsServices) {
   }
 
   ngOnInit() {
-    this.novelId=this.activatedRoute.snapshot.paramMap.get('id');
-    this.novel=this.novelsServices.allNovels.find(x=>x.id ==this.novelId)
+    this.novelId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.novel = this.novelsServices.allNovels.find(x => x.id == this.novelId)
+    this.novelRating = Number(this.novel.novelRating)
   }
 }
