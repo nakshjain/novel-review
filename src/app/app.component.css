@@ -13,7 +13,7 @@
 }
 .nav-heading{
   color: white;
-  font-style: Italic;
+  font-family: 'Playfair Display', serif;
   text-decoration: none;
   font-size: 250%;
 }
@@ -32,5 +32,10 @@
 }
 .sidenav{
   background-color: #e8dac6;
-  width: 10%;
+  width: 12%;
+}
+@media (max-width: 768px) {
+  .sidenav{
+    width: 18%;
+  }
 }

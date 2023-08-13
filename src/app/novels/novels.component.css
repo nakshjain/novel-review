@@ -15,6 +15,7 @@
 .title{
   font-size: 300%;
   position: absolute;
+  font-family: 'Abril Fatface', cursive;;
   left: 2%;
 }
 .search{
