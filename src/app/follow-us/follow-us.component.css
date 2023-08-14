@@ -24,13 +24,13 @@
   overflow: hidden;
 }
 .image{
-  max-width: 10vh;
-  max-height: 10vh;
+  max-width: 7vh;
+  max-height: 7vh;
   width: auto;
   height: auto;
 }
 .image:hover{
-  max-height: 9vh;
+  max-height: 6vh;
 }
 @media (max-width: 768px) {
   .follow-us-heading{
