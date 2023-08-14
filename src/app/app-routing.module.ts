@@ -6,7 +6,6 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import {HomePageComponent} from "./home-page/home-page.component";
-import {NovelsComponent} from "./shared/novels.component";
 import {NovelComponent} from "./shared/novel/novel.component";
 import {BrowseByGenreComponent} from "./browse-by-genre/browse-by-genre.component";
 import {AllNovelsComponent} from "./all-novels/all-novels.component";
@@ -17,7 +16,7 @@ const routes: Routes = [
   { path: 'genre', component: BrowseByGenreComponent},
   { path: 'novels', component: AllNovelsComponent},
   { path: 'genre/:genre', component: BrowseByGenreComponent},
-  { path: 'novels/novel/:id', component: NovelComponent}
+  { path: 'novel/:id', component: NovelComponent}
 ];
 
 @NgModule({

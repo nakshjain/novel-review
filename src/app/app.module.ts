@@ -10,13 +10,12 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import { HomePageComponent } from './home-page/home-page.component';
-import { NovelImageSliderComponent } from './home-page/image-slider/novel-image-slider.component';
+import { ImageSliderComponent } from './shared/image-slider/image-slider.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgxUiLoaderModule} from "ngx-ui-loader";
 import {NovelsComponent} from "./shared/novels.component";
 import {NovelComponent} from './shared/novel/novel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {NovelsServices} from "./api/novel-service/novels.services";
 import {FormsModule} from "@angular/forms";
 import { SearchComponent } from './shared/search/search.component';
 import { FollowUsComponent } from './follow-us/follow-us.component';
@@ -25,12 +24,13 @@ import { AllNovelsComponent } from './all-novels/all-novels.component';
 import { NovelsDisplayComponent } from './shared/novels-display/novels-display.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatCardModule} from "@angular/material/card";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    NovelImageSliderComponent,
+    ImageSliderComponent,
     NovelsComponent,
     NovelComponent,
     SearchComponent,
@@ -43,6 +43,7 @@ import {MatCardModule} from "@angular/material/card";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
@@ -55,7 +56,7 @@ import {MatCardModule} from "@angular/material/card";
     NgbModule,
     MatCardModule,
   ],
-  providers: [NovelsServices],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

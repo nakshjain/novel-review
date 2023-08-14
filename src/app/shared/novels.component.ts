@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Novel} from "../home-page/image-slider/novels.types";
+import {Novel} from "../types/novels.types";
 
 @Component({
   selector: 'app-novels',

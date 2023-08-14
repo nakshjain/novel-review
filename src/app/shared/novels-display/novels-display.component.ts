@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {Novel} from "../../home-page/image-slider/novels.types";
-import {NovelsServices} from "../../api/novel-service/novels.services";
+import {Novel} from "../../types/novels.types";
+import {NovelService} from "../../api/novel.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-novels-display',
@@ -14,21 +15,21 @@ export class NovelsDisplayComponent {
   @Input()
   genre=''
 
-  onSearchTextEntered(searchValue: string){
-    this.searchText=searchValue
-  }
-
-  onGenreSelected(selectValue: string){
-    this.genre=selectValue
-  }
-
-  constructor(private novelsServices:NovelsServices) {
+  constructor(private router: Router, private novelService: NovelService) {
   }
 
   ngOnInit(): void {
-    console.log(this.searchText)
-    this.novels=this.novelsServices.getNovelsSearched(this.searchText, this.genre)
-    this.onSearchTextEntered(this.searchText)
-    this.onGenreSelected(this.genre)
+    this.getNovels();
+  }
+
+  getNovels(): void {
+    this.novelService.getAllNovels()
+      .subscribe(novels => {
+        console.log(novels)
+        this.novels = novels;
+      });
+  }
+  viewNovelDetails(novelId: string): void {
+    this.router.navigate(['novel', novelId]); // Navigate to detail page with novel ID
   }
 }

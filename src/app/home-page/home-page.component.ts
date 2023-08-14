@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import {NgxUiLoaderService} from "ngx-ui-loader";
-import {NovelsByGenre} from "./image-slider/novels.types";
-import {NovelsServices} from "../api/novel-service/novels.services";
-import {NavigationEnd, Router} from "@angular/router";
+import {NovelsByGenre} from "../types/novels.types";
+import {NovelService} from "../api/novel.service";
 
 @Component({
   selector: 'app-home-page',
@@ -10,25 +9,21 @@ import {NavigationEnd, Router} from "@angular/router";
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent {
-  title='GENRE'
   allNovelsByGenre: NovelsByGenre[]=[]
 
-  constructor(private router:Router, private ngxService: NgxUiLoaderService, private novelsServices:NovelsServices) {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.ngxService.stop();
-      }
-    });
-
+  constructor(private ngxService: NgxUiLoaderService, private novelService:NovelService) {
   }
 
   ngOnInit() {
     this.showLoader();
-    this.allNovelsByGenre=this.novelsServices.getAllNovelsByGenre()
-    if(this.allNovelsByGenre){
-      console.log(this.allNovelsByGenre)
-      this.hideLoader()
-    }
+    this.novelService.getAllNovelsByGenre()
+      .subscribe(
+        (novelsByGenre)=>{
+          console.log(novelsByGenre)
+          this.allNovelsByGenre=novelsByGenre
+          this.hideLoader()
+        }
+      )
   }
 
   showLoader() {
