@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="header">
+    <div class="title">{{title}}</div>
+    <div class="select">
+<!--      <mat-card>-->
+<!--        <mat-select>-->
+<!--          <mat-option>11</mat-option>-->
+<!--          <mat-option>11</mat-option>-->
+<!--          <mat-option>11</mat-option>-->
+<!--          <mat-option>11</mat-option>-->
+<!--          <mat-option>11</mat-option>-->
+<!--        </mat-select>-->
+<!--      </mat-card>-->
+    </div>
+    <div class="search">
+      <app-search (searchTextChanged)="onSearchTextEntered($event)" [hidden]="hideSearchBar"></app-search>
+    </div>
+  </div>
+  <app-novels-display
+    [searchText]="searchText"
+    [genre]="genre"
+  ></app-novels-display>
+</div>

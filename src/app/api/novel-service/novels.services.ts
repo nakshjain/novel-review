@@ -61,7 +61,7 @@ export class NovelsServices {
     });
     return allNovelsByGenre;
   }
-  getNovelsSearched(searchValue: string, searchParam:string){
+  getNovelsSearched(searchValue: string, searchParam?:string){
     let novels: Novel[]=[]
     if(searchParam){
       this.getNovelsByGenre(searchParam).forEach(

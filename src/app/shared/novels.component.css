@@ -18,33 +18,16 @@
   font-family: 'Abril Fatface', cursive;;
   left: 2%;
 }
+.select{
+  position: absolute;
+  width: 25%
+}
 .search{
   position: absolute;
   right:2%;
 }
-.novels{
-  padding: 0 0 2% 0;
-  background-color: lightblue;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-.novel{
-  padding: 5%;
-  display: flex;
-  overflow: hidden;
-}
-.novel-image{
-  width: 100%;
-  object-fit: cover;
-}
-.novel-image:hover{
-  transform: scale(1.2);
-}
 
 @media (max-width: 768px) {
-  .novels {
-    grid-template-columns: repeat(4, 1fr);
-  }
   .header{
     position: relative;
     padding: 1% 0 5%;
