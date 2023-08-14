@@ -18,11 +18,17 @@ export class NovelsDisplayComponent {
     this.searchText=searchValue
   }
 
+  onGenreSelected(selectValue: string){
+    this.genre=selectValue
+  }
+
   constructor(private novelsServices:NovelsServices) {
   }
 
   ngOnInit(): void {
+    console.log(this.searchText)
     this.novels=this.novelsServices.getNovelsSearched(this.searchText, this.genre)
     this.onSearchTextEntered(this.searchText)
+    this.onGenreSelected(this.genre)
   }
 }

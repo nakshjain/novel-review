@@ -1,38 +1,39 @@
-*{
+* {
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
   font-style: normal;
   font-variant: normal;
   line-height: 26.4px;
 }
-.main{
+
+.main {
   min-height: 90vh;
   background: lightblue;
 }
-.header{
-  position: relative;
-  padding: 2% 0 4%;
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2%;
 }
-.title{
+
+.title {
+  flex: 1;
   font-size: 300%;
-  position: absolute;
-  font-family: 'Abril Fatface', cursive;;
-  left: 2%;
+  font-family: 'Abril Fatface', cursive;
+  max-width: 4040px;
 }
-.select{
-  position: absolute;
-  width: 25%
-}
-.search{
-  position: absolute;
-  right:2%;
+
+.search {
+  flex: 1;
 }
 
 @media (max-width: 768px) {
-  .header{
-    position: relative;
-    padding: 1% 0 5%;
+  .header {
+    padding: 1% 0;
   }
-  .title{
-    font-size: 250%;
+  .title {
+    font-size: 200%;
+    max-width: 150px;
   }
 }

@@ -8,5 +8,5 @@ import {Component, Input} from '@angular/core';
 export class AllNovelsComponent {
   title='All Novels'
 
-  hideSearchBar: boolean=false
+  hideSelectBar: boolean=true
 }

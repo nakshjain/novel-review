@@ -14,16 +14,26 @@ export class NovelsComponent implements OnInit{
   genre=''
 
   @Input()
-  hideSearchBar: boolean=true;
+  hideFilterBar: boolean=false
+  @Input()
+  hideSelectBar: boolean=false
+  @Input()
+  hideSearchBar: boolean=false
 
   novels: Novel[]=[]
   searchText=''
+  genreSelect=''
 
   onSearchTextEntered(searchValue: string){
     this.searchText=searchValue
   }
 
+  onGenreSelected(selectValue: string){
+    this.genreSelect=selectValue
+  }
+
   ngOnInit(): void {
     this.onSearchTextEntered(this.searchText)
+    this.onGenreSelected(this.genreSelect)
   }
 }

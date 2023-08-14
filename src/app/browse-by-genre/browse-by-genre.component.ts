@@ -7,7 +7,8 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./browse-by-genre.component.css']
 })
 export class BrowseByGenreComponent implements OnInit{
-  title='Browse By Genre'
+  title='Browse By '
+  genreHeading='Genre'
   genre: any;
 
   constructor(private activatedRoute: ActivatedRoute) {
@@ -16,5 +17,8 @@ export class BrowseByGenreComponent implements OnInit{
 
   ngOnInit(): void {
     this.genre = this.activatedRoute.snapshot.paramMap.get('genre');
+    if(this.genre){
+      this.genreHeading=this.genre
+    }
   }
 }

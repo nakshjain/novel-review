@@ -1,4 +1,14 @@
-<div>
-  <span class="search">Search: </span>
-  <input type="text" [(ngModel)]="searchText" (input)="onSearchTextChanged()">
+<div class="filter" [hidden]="hideFilterBar">
+  <div class="select" [hidden]="hideSelectBar">
+    <div class="select-heading">Select your prefrences</div>
+    <mat-card class="mat-card">
+      <mat-select placeholder="{{genreName}}" (selectionChange)="onGenreSelectChanged($event)" [(ngModel)]="genreName">
+        <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
+      </mat-select>
+    </mat-card>
+  </div>
+  <div class="search" [hidden]="hideSearchBar">
+    <div class="search-heading">Search: </div>
+    <input type="text" class="search-input" [(ngModel)]="searchText" (input)="onSearchTextChanged()">
+  </div>
 </div>

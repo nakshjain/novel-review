@@ -1,6 +1,6 @@
 <div class="novels">
   <ng-container *ngFor="let novel of novels">
-    <div *ngIf="searchText==='' || novel.name.toLocaleLowerCase().includes(searchText)" class="novel">
+    <div *ngIf="searchText==='' && novel.genre.includes(genre)|| novel.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()) && novel.genre.includes(genre)" class="novel">
       <div class="image-container">
         <a  routerLink="/novels/novel/{{novel.id}}"><img src="{{ novel.imageLink }}" class="novel-image" alt="{{ novel.name }}" /></a>
       </div>
