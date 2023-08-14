@@ -66,6 +66,23 @@ app.get('/api/allNovelsByGenre', async (req, res) => {
   }
 });
 
+app.get('/api/allNovelsByGenre/:genre', async (req, res) => {
+  try {
+    const genreParam = req.params.genre.toLowerCase(); // Get the genre parameter
+    const data = await fs.readFile(filePath, 'utf-8');
+    const novels = JSON.parse(data);
+
+    const novelsByGenre = {
+      title: `${genreParam}`,
+      novels: novels.filter(novel => novel.genre.toLowerCase() === genreParam),
+    };
+
+    res.json(novelsByGenre);
+  } catch (error) {
+    console.error('Error reading file:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
 
 app.get('/api/allNovelsByName', async (req, res) => {
   try {

@@ -1,5 +1,5 @@
 <div class="header">
-  <div class="title">{{genre}}</div>
+  <div class="title">{{title}}</div>
   <div >
     <a routerLink="/genre/{{genre}}" class="view-all">
       <div class="view-all-heading">View All</div>
@@ -16,7 +16,7 @@
     #slickModal="slick-carousel"
     [config]="slideConfigDesktop"
   >
-    <div ngxSlickItem *ngFor="let image of images" class="slide">
+    <div ngxSlickItem *ngFor="let image of novels" class="slide">
       <img (click)="viewNovelDetails(image.id)" src="{{ image.imageLink }}" class="novel-image" alt="{{ image.id }}" />
     </div>
   </ngx-slick-carousel>
@@ -28,7 +28,7 @@
     #slickModal="slick-carousel"
     [config]="slideConfigMobile"
   >
-    <div ngxSlickItem *ngFor="let image of images" class="slide">
+    <div ngxSlickItem *ngFor="let image of novels" class="slide">
       <img (click)="viewNovelDetails(image.id)" src="{{ image.imageLink }}" class="novel-image" alt="{{ image.id }}" />
     </div>
   </ngx-slick-carousel>

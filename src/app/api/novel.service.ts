@@ -7,25 +7,31 @@ import {Novel, NovelsByGenre} from "../types/novels.types";
   providedIn: 'root',
 })
 export class NovelService {
-  private apiUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
   getAllNovels(): Observable<Novel[]> {
-    return this.http.get<Novel[]>(`${this.apiUrl}/api/allNovels`);
+    return this.http.get<Novel[]>(`${this.baseUrl}/api/allNovels`);
   }
 
   getNovelById(id: string): Observable<Novel> {
-    console.log(`${this.apiUrl}/novels/${id}`)
-    return this.http.get<Novel>(`${this.apiUrl}/api/novels/${id}`);
+    console.log(`${this.baseUrl}/novels/${id}`)
+    return this.http.get<Novel>(`${this.baseUrl}/api/novels/${id}`);
   }
 
-  getAllNovelsByGenre(): Observable<NovelsByGenre[]> {
-    return this.http.get<NovelsByGenre[]>(`${this.apiUrl}/api/allNovelsByGenre`);
+  getAllNovelsByGenres(): Observable<NovelsByGenre[]> {
+    return this.http.get<NovelsByGenre[]>(`${this.baseUrl}/api/allNovelsByGenre`);
+  }
+
+  getAllNovelsByGenre(genre: string): Observable<any> {
+    console.log(genre)
+    const url = `${this.baseUrl}/api/allNovelsByGenre/${genre}`;
+    return this.http.get(url);
   }
 
   getNovelsByName(name: string): Observable<Novel[]> {
     const params = new HttpParams().set('name', name);
-    return this.http.get<Novel[]>(`${this.apiUrl}/allNovelsByName`, { params });
+    return this.http.get<Novel[]>(`${this.baseUrl}/allNovelsByName`, { params });
   }
 }

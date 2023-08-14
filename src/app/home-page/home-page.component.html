@@ -1,6 +1,7 @@
 <div *ngFor="let genre of allNovelsByGenre">
   <app-image-slider
-    [images]="genre.novels"
+    [novels]="genre.novels"
     [genre]="genre.title"
+    [title]="genre.title"
   ></app-image-slider>
 </div>

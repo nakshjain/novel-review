@@ -27,9 +27,12 @@ export class ImageSliderComponent {
   @Input()
   genre: string=''
   @Input()
-  images :Novel[]=[]
+  title: string=''
+  @Input()
+  novels :Novel[]=[]
 
   constructor(private router: Router){
+    console.log(this.novels)
   }
 
   viewNovelDetails(novelId: string): void {

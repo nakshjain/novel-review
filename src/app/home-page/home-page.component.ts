@@ -16,7 +16,7 @@ export class HomePageComponent {
 
   ngOnInit() {
     this.showLoader();
-    this.novelService.getAllNovelsByGenre()
+    this.novelService.getAllNovelsByGenres()
       .subscribe(
         (novelsByGenre)=>{
           console.log(novelsByGenre)
