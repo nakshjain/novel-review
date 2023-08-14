@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {NovelsByGenre} from "./image-slider/novels.types";
 import {NovelsServices} from "../api/novel-service/novels.services";
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home-page',
@@ -12,12 +13,29 @@ export class HomePageComponent {
   title='GENRE'
   allNovelsByGenre: NovelsByGenre[]=[]
 
-  constructor(private ngxService: NgxUiLoaderService, private novelsServices:NovelsServices) {}
+  constructor(private router:Router, private ngxService: NgxUiLoaderService, private novelsServices:NovelsServices) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.ngxService.stop();
+      }
+    });
+
+  }
+
   ngOnInit() {
-    this.ngxService.start();
-    setTimeout(() => {
-      this.ngxService.stop();
-    }, 1000);
+    this.showLoader();
     this.allNovelsByGenre=this.novelsServices.getAllNovelsByGenre()
+    if(this.allNovelsByGenre){
+      console.log(this.allNovelsByGenre)
+      this.hideLoader()
+    }
+  }
+
+  showLoader() {
+    this.ngxService.start();
+  }
+
+  hideLoader() {
+    this.ngxService.stop();
   }
 }
