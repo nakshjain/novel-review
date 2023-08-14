@@ -10,9 +10,11 @@
     </div>
     <div class="novel-review">{{novel.review}}</div>
   </div>
-  <app-image-slider
-    [novels]="novels"
-    [title]="titleSimilar"
-    [genre]="novel.genre"
-  ></app-image-slider>
+  <div class="similar-slider">
+    <app-image-slider
+      [novels]="novels"
+      [title]="titleSimilar"
+      [genre]="novel.genre"
+    ></app-image-slider>
+  </div>
 </div>

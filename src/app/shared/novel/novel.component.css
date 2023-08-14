@@ -57,6 +57,11 @@ ngb-rating{
   text-align: left;
   font-size: 130%;
 }
+.similar-slider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media (max-width: 992px) {
   .novel-about {
