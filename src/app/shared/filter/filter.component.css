@@ -19,10 +19,12 @@
 .mat-card {
   flex: 1;
   max-width: 200px;
+  min-width:125px;
   margin-right: 1rem;
 }
 
 .search {
+  align-items: center;
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -37,6 +39,7 @@
   flex: 1;
   max-width: 200px;
   margin-right: 1rem;
+  max-height: 24px;
 }
 
 @media (max-width: 768px) {
@@ -47,6 +50,6 @@
     font-size: 100%;
   }
   .search-input {
-    max-width: 150px;
+    max-width: 120px;
   }
 }
