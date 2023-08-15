@@ -7,9 +7,15 @@
   transform: scale(1.5);
 }
 .navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
   background-color: #121111;
   color: white;
   height: 10%
+}
+.mat-sidenav-content {
+  padding-top: 64px;
 }
 .nav-heading{
   color: white;
