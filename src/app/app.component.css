@@ -37,6 +37,7 @@
   text-decoration: none;
 }
 .sidenav{
+  padding-top: 64px;
   background-color: #e8dac6;
   width: 12%;
 }
