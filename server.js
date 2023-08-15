@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors'); // Import the cors package
 const fs = require('fs').promises;
+const xlsx = require('xlsx'); // Import the xlsx package
 const path = require('path');
 
 const app = express();
@@ -8,12 +9,14 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-const filePath = path.join(__dirname, 'src', 'assets', 'novel-review.json');
+const filePath = path.join(__dirname, 'src', 'assets', 'novels-review.xlsx');
 
 app.get('/api/allNovels', async (req, res) => {
   try {
-    const data = await fs.readFile(filePath, 'utf-8');
-    const novels = JSON.parse(data);
+    const workbook = xlsx.readFile(filePath);
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const novels = xlsx.utils.sheet_to_json(sheet);
     res.json(novels);
   } catch (error) {
     console.error('Error reading file:', error);
@@ -23,8 +26,10 @@ app.get('/api/allNovels', async (req, res) => {
 app.get('/api/novels/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await fs.readFile(filePath, 'utf-8');
-    const novels = JSON.parse(data);
+    const workbook = xlsx.readFile(filePath);
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const novels = xlsx.utils.sheet_to_json(sheet);
     const novel = novels.find(novel => novel.id === id);
     if (novel) {
       res.json(novel);
@@ -39,8 +44,10 @@ app.get('/api/novels/:id', async (req, res) => {
 
 app.get('/api/allNovelsByGenre', async (req, res) => {
   try {
-    const data = await fs.readFile(filePath, 'utf-8');
-    const novels = JSON.parse(data);
+    const workbook = xlsx.readFile(filePath);
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const novels = xlsx.utils.sheet_to_json(sheet);
 
     const novelsByGenre = {};
 
@@ -69,8 +76,10 @@ app.get('/api/allNovelsByGenre', async (req, res) => {
 app.get('/api/allNovelsByGenre/:genre', async (req, res) => {
   try {
     const genreParam = req.params.genre.toLowerCase(); // Get the genre parameter
-    const data = await fs.readFile(filePath, 'utf-8');
-    const novels = JSON.parse(data);
+    const workbook = xlsx.readFile(filePath);
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const novels = xlsx.utils.sheet_to_json(sheet);
 
     const novelsByGenre = {
       title: `${genreParam}`,
@@ -87,8 +96,10 @@ app.get('/api/allNovelsByGenre/:genre', async (req, res) => {
 app.get('/api/allNovelsByName', async (req, res) => {
   try {
     const { name } = req.query;
-    const data = await fs.readFile(filePath, 'utf-8');
-    const novels = JSON.parse(data);
+    const workbook = xlsx.readFile(filePath);
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const novels = xlsx.utils.sheet_to_json(sheet);
     const filteredNovels = novels.filter(novel => novel.name.toLowerCase().includes(name.toLowerCase()));
     res.json(filteredNovels);
   } catch (error) {
