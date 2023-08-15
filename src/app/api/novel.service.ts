@@ -7,7 +7,7 @@ import {Novel, NovelsByGenre} from "../types/novels.types";
   providedIn: 'root',
 })
 export class NovelService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = '';
 
   constructor(private http: HttpClient) {}
 
