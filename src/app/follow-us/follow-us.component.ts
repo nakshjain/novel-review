@@ -10,19 +10,19 @@ export class FollowUsComponent {
     {
       id:'fb',
       name:'Facebook',
-      imageLink:'assets/images/social-media/facebook.png',
+      imageLink:'https://drive.google.com/uc?export=view&id=1VKWkIxPL1AaxRAPKHCU-BvugKEzEtvxL',
       link:''
     },
     {
       id:'insta',
       name:'Instagram',
-      imageLink:'assets/images/social-media/instagram.png',
+      imageLink:'https://drive.google.com/uc?export=view&id=1gEvdJ10RPMDeA_6ABs85kA5XGn_QflQT',
       link:''
     },
     {
       id:'tweet',
       name:'Twitter',
-      imageLink:'assets/images/social-media/twitter.png',
+      imageLink:'https://drive.google.com/uc?export=view&id=1jNGbsTGDtHJHnUnKZk8hoY0iPIb9CxVb',
       link:''
     },
   ]
