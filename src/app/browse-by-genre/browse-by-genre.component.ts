@@ -16,7 +16,9 @@ export class BrowseByGenreComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.genre = this.activatedRoute.snapshot.paramMap.get('genre');
+    this.activatedRoute.params.subscribe(params => {
+      this.genre= params['genre'];
+    });
     if(this.genre){
       this.genreHeading=this.genre
     }

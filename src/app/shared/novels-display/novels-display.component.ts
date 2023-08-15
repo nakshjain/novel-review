@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Novel} from "../../types/novels.types";
 import {NovelService} from "../../api/novel.service";
 import {Router} from "@angular/router";
+import {NgxUiLoaderService} from "ngx-ui-loader";
 
 @Component({
   selector: 'app-novels-display',
@@ -15,7 +16,7 @@ export class NovelsDisplayComponent {
   @Input()
   genre=''
 
-  constructor(private router: Router, private novelService: NovelService) {
+  constructor(private router: Router, private novelService: NovelService, private ngxService: NgxUiLoaderService) {
   }
 
   ngOnInit(): void {
@@ -25,8 +26,10 @@ export class NovelsDisplayComponent {
   getNovels(): void {
     this.novelService.getAllNovels()
       .subscribe(novels => {
+        this.ngxService.start()
         console.log(novels)
         this.novels = novels;
+        this.ngxService.stop()
       });
   }
   viewNovelDetails(novelId: string): void {

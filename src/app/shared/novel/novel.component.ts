@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {NovelService} from "../../api/novel.service";
 import {Novel} from "../../types/novels.types";
+import {NgxUiLoaderService} from "ngx-ui-loader";
 
 @Component({
   selector: 'app-novel',
@@ -14,13 +15,15 @@ export class NovelComponent {
   novels:Novel[]=[]
   titleSimilar='Similar Novels'
 
-  constructor(private route: ActivatedRoute, private novelService:NovelService) {
+  constructor(private route: ActivatedRoute, private novelService:NovelService, private ngxService: NgxUiLoaderService) {
   }
 
   ngOnInit(){
     this.route.params.subscribe(params => {
+      this.ngxService.start()
       const novelId = params['id'];
       this.getNovelById(novelId);
+      this.ngxService.stop()
     });
   }
 

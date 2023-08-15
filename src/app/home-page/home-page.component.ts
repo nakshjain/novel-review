@@ -15,22 +15,14 @@ export class HomePageComponent {
   }
 
   ngOnInit() {
-    this.showLoader();
     this.novelService.getAllNovelsByGenres()
       .subscribe(
         (novelsByGenre)=>{
+          this.ngxService.start()
           console.log(novelsByGenre)
           this.allNovelsByGenre=novelsByGenre
-          this.hideLoader()
+          this.ngxService.stop()
         }
       )
-  }
-
-  showLoader() {
-    this.ngxService.start();
-  }
-
-  hideLoader() {
-    this.ngxService.stop();
   }
 }
