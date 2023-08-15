@@ -15,9 +15,8 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgxUiLoaderModule} from "ngx-ui-loader";
 import {NovelsComponent} from "./shared/novels.component";
 import {NovelComponent} from './shared/novel/novel.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
-import { SearchComponent } from './shared/search/search.component';
+import { FilterComponent } from './shared/filter/filter.component';
 import { FollowUsComponent } from './follow-us/follow-us.component';
 import { BrowseByGenreComponent } from './browse-by-genre/browse-by-genre.component';
 import { AllNovelsComponent } from './all-novels/all-novels.component';
@@ -25,6 +24,7 @@ import { NovelsDisplayComponent } from './shared/novels-display/novels-display.c
 import {MatSelectModule} from "@angular/material/select";
 import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
+import {NovelRatingComponent} from "./shared/novel/novel-rating/novel-rating.component";
 
 @NgModule({
   declarations: [
@@ -33,11 +33,12 @@ import {HttpClientModule} from "@angular/common/http";
     ImageSliderComponent,
     NovelsComponent,
     NovelComponent,
-    SearchComponent,
+    FilterComponent,
     FollowUsComponent,
     BrowseByGenreComponent,
     AllNovelsComponent,
     NovelsDisplayComponent,
+    NovelRatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +54,6 @@ import {HttpClientModule} from "@angular/common/http";
     MatSelectModule,
     SlickCarouselModule,
     NgxUiLoaderModule,
-    NgbModule,
     MatCardModule,
   ],
   providers: [],

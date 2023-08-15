@@ -6,7 +6,9 @@
   <div class="novel-about">
     <div class="novel-image-main">
       <img class="novel-image" src="{{ novel.imageLink }}" alt="Image" />
-<!--      <ngb-rating [max]="5" [readonly]="true" [rate]="novelRating"></ngb-rating>-->
+      <app-novel-rating
+        [rating]="novel.rating"
+      ></app-novel-rating>
     </div>
     <div class="novel-review">{{novel.review}}</div>
   </div>

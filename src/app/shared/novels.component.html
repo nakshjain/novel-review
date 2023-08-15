@@ -2,14 +2,14 @@
   <div class="header">
     <div class="title">{{title}}</div>
     <div class="search">
-      <app-search
+      <app-filter
         (searchTextChanged)="onSearchTextEntered($event)"
         (genreSelected)="onGenreSelected($event)"
         [hideFilterBar]=hideFilterBar
         [hideSearchBar]=hideSearchBar
         [hideSelectBar]=hideSelectBar
         [genreName]="genre"
-      ></app-search>
+      ></app-filter>
     </div>
   </div>
   <app-novels-display

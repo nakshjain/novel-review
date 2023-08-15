@@ -11,7 +11,6 @@ import {NovelService} from "../../api/novel.service";
 })
 export class NovelComponent implements OnInit{
   novel: any;
-  novelRating: any;
   novels:Novel[]=[]
   titleSimilar='Similar Novels'
 
