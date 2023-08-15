@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {NovelService} from "../../api/novel.service";
 import {Novel} from "../../types/novels.types";
 import {NgxUiLoaderService} from "ngx-ui-loader";
+import {NovelService} from "../../api/novel.service";
 
 @Component({
   selector: 'app-novel',
   templateUrl: './novel.component.html',
   styleUrls: ['./novel.component.css'],
 })
-export class NovelComponent {
+export class NovelComponent implements OnInit{
   novel: any;
   novelRating: any;
   novels:Novel[]=[]
   titleSimilar='Similar Novels'
 
-  constructor(private route: ActivatedRoute, private novelService:NovelService, private ngxService: NgxUiLoaderService) {
+  constructor(private route: ActivatedRoute, private ngxService: NgxUiLoaderService, private novelService:NovelService) {
   }
 
   ngOnInit(){
@@ -28,29 +28,11 @@ export class NovelComponent {
   }
 
   getNovelById(id: string){
-    this.novelService.getNovelById(id)
-      .subscribe(
-        (novel) => {
-        this.novel = novel;
-        this.getNovelsByGenre(novel.genre)
-        },
-        (error)=>{
-        console.log(error)
-        }
-      );
+    this.novel=this.novelService.getNovelById(id)
+    this.getNovelsByGenre(this.novel.genre)
   }
 
   getNovelsByGenre(genre: string){
-    console.log(genre)
-    this.novelService.getAllNovelsByGenre(genre)
-      .subscribe(
-        (novels)=>{
-          console.log(novels)
-        this.novels=novels.novels
-        },
-        (error)=>{
-          console.log(error)
-        }
-      )
+    this.novels=this.novelService.getNovelsByGenre(genre)
   }
 }

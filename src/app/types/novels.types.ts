@@ -9,6 +9,6 @@ export interface Novel {
 }
 
 export interface NovelsByGenre {
-  title: string
+  genre: string
   novels: Novel[]
 }

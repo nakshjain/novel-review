@@ -12,17 +12,6 @@ export class HomePageComponent {
   allNovelsByGenre: NovelsByGenre[]=[]
 
   constructor(private ngxService: NgxUiLoaderService, private novelService:NovelService) {
-  }
-
-  ngOnInit() {
-    this.novelService.getAllNovelsByGenres()
-      .subscribe(
-        (novelsByGenre)=>{
-          this.ngxService.start()
-          console.log(novelsByGenre)
-          this.allNovelsByGenre=novelsByGenre
-          this.ngxService.stop()
-        }
-      )
+    this.allNovelsByGenre=this.novelService.getAllNovelsByGenre()
   }
 }
