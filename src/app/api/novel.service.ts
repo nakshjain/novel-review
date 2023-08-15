@@ -1,37 +1,44 @@
-import {Observable} from "rxjs";
-import {Injectable} from "@angular/core";
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import novelReviews from '../../assets/novel-review.json'
 import {Novel, NovelsByGenre} from "../types/novels.types";
 
 @Injectable({
   providedIn: 'root',
 })
 export class NovelService {
-  private baseUrl = '';
+  private data: Novel[] = novelReviews;
 
-  constructor(private http: HttpClient) {}
-
-  getAllNovels(): Observable<Novel[]> {
-    return this.http.get<Novel[]>(`${this.baseUrl}/api/allNovels`);
+  constructor() {
   }
 
-  getNovelById(id: string): Observable<Novel> {
-    console.log(`${this.baseUrl}/novels/${id}`)
-    return this.http.get<Novel>(`${this.baseUrl}/api/novels/${id}`);
+  getNovelsAll(): any[] {
+    return this.data;
   }
 
-  getAllNovelsByGenres(): Observable<NovelsByGenre[]> {
-    return this.http.get<NovelsByGenre[]>(`${this.baseUrl}/api/allNovelsByGenre`);
+  getAllNovelsByGenre(): NovelsByGenre[] {
+    const novelsByGenre: { [genre: string]: Novel[] } = {};
+
+    this.data.forEach((novel) => {
+      if (novelsByGenre[novel.genre]) {
+        novelsByGenre[novel.genre].push(novel);
+      } else {
+        novelsByGenre[novel.genre] = [novel];
+      }
+    });
+
+    return Object.keys(novelsByGenre).map(
+      (genre) => ({
+        genre,
+        novels: novelsByGenre[genre],
+      })
+    );
   }
 
-  getAllNovelsByGenre(genre: string): Observable<any> {
-    console.log(genre)
-    const url = `${this.baseUrl}/api/allNovelsByGenre/${genre}`;
-    return this.http.get(url);
+  getNovelById(id: string): Novel | undefined {
+    return this.data.find(novel => novel.id === id);
   }
 
-  getNovelsByName(name: string): Observable<Novel[]> {
-    const params = new HttpParams().set('name', name);
-    return this.http.get<Novel[]>(`${this.baseUrl}/allNovelsByName`, { params });
+  getNovelsByGenre(genre: string): Novel[] {
+    return this.data.filter(novel => novel.genre === genre);
   }
 }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Novel} from "../types/novels.types";
+import {NgxUiLoaderService} from "ngx-ui-loader";
 
 @Component({
   selector: 'app-novels',
@@ -32,8 +33,14 @@ export class NovelsComponent implements OnInit{
     this.genreSelect=selectValue
   }
 
+  constructor(private ngxService:NgxUiLoaderService) {
+  }
   ngOnInit(): void {
     this.onSearchTextEntered(this.searchText)
     this.onGenreSelected(this.genreSelect)
+    this.ngxService.start()
+    setTimeout(()=>{
+      this.ngxService.stop()
+    })
   }
 }
