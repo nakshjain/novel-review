@@ -12,10 +12,10 @@
   z-index: 1000;
   background-color: #121111;
   color: white;
-  height: 10%
 }
 .mat-sidenav-content {
-  padding-top: 64px;
+  padding-top: 70px;
+  overflow: hidden;
 }
 .nav-heading{
   color: white;
@@ -37,12 +37,24 @@
   text-decoration: none;
 }
 .sidenav{
-  padding-top: 64px;
+  padding-top: 70px;
   background-color: #e8dac6;
   width: 12%;
 }
-@media (max-width: 768px) {
+@media (max-width: 434px) {
+  .navbar{
+    width: 100%;
+  }
   .sidenav{
     width: 18%;
+  }
+  .nav-heading{
+    font-size: 150%;
+  }
+  .button{
+    width: 15%;
+  }
+  .mat-icon{
+    transform: scale(1);
   }
 }

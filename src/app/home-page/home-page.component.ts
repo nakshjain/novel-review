@@ -19,6 +19,6 @@ export class HomePageComponent implements OnInit{
     this.ngxService.start()
     setTimeout(()=>{
       this.ngxService.stop()
-    }, 1000)
+    }, 3000)
   }
 }
