@@ -40,6 +40,7 @@
   padding-top: 70px;
   background-color: #e8dac6;
   width: 12%;
+  position: fixed;
 }
 @media (max-width: 434px) {
   .navbar{
