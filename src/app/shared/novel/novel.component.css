@@ -58,6 +58,7 @@ ngb-rating{
   font-size: 130%;
 }
 .similar-slider{
+  padding: 5% 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
