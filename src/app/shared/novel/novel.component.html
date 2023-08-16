@@ -5,7 +5,7 @@
   </div>
   <div class="novel-about">
     <div class="novel-image-main">
-      <img class="novel-image" src="{{ novel.imageLink }}" alt="Image" />
+      <img class="novel-image" src="{{ novel.imageUrl }}" alt="Image" />
       <app-novel-rating
         [rating]="novel.rating"
       ></app-novel-rating>
@@ -14,7 +14,7 @@
   </div>
   <div class="similar-slider">
     <app-image-slider
-      [novels]="novels"
+      [novels]="novelsByGenre"
       [title]="titleSimilar"
       [genre]="novel.genre"
     ></app-image-slider>

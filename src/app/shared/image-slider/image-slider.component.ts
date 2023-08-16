@@ -32,11 +32,9 @@ export class ImageSliderComponent {
   novels :Novel[]=[]
 
   constructor(private router: Router){
-    console.log(this.novels)
   }
 
   viewNovelDetails(novelId: string): void {
-    console.log(novelId)
     this.router.navigate(['novel', novelId]); // Navigate to detail page with novel ID
   }
 }

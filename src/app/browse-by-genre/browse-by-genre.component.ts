@@ -12,7 +12,6 @@ export class BrowseByGenreComponent implements OnInit{
   genre: any;
 
   constructor(private activatedRoute: ActivatedRoute) {
-    console.log('genre')
   }
 
   ngOnInit(): void {

@@ -12,13 +12,15 @@ export class HomePageComponent implements OnInit{
   allNovelsByGenre: NovelsByGenre[]=[]
 
   constructor(private ngxService: NgxUiLoaderService, private novelService:NovelService) {
-    this.allNovelsByGenre=this.novelService.getAllNovelsByGenre()
   }
 
   ngOnInit(): void {
     this.ngxService.start()
-    setTimeout(()=>{
-      this.ngxService.stop()
-    }, 3000)
+    this.novelService.getAllNovelsByGenre().subscribe(
+      (allNovelsByGenre)=>{
+        this.allNovelsByGenre=allNovelsByGenre
+        this.ngxService.stop()
+      }
+    )
   }
 }

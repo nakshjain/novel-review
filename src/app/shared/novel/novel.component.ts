@@ -11,7 +11,7 @@ import {NovelService} from "../../api/novel.service";
 })
 export class NovelComponent implements OnInit{
   novel: any;
-  novels:Novel[]=[]
+  novelsByGenre:Novel[]=[]
   titleSimilar='Similar Novels'
 
   constructor(private route: ActivatedRoute, private ngxService: NgxUiLoaderService, private novelService:NovelService) {
@@ -22,16 +22,24 @@ export class NovelComponent implements OnInit{
       this.ngxService.start()
       const novelId = params['id'];
       this.getNovelById(novelId);
-      this.ngxService.stop()
     });
   }
 
   getNovelById(id: string){
-    this.novel=this.novelService.getNovelById(id)
-    this.getNovelsByGenre(this.novel.genre)
+    this.novelService.getNovelById(id).subscribe(
+      (novel)=>{
+        this.novel=novel;
+        this.ngxService.stop()
+        this.getNovelsByGenre(this.novel.genre)
+      }
+    )
   }
 
   getNovelsByGenre(genre: string){
-    this.novels=this.novelService.getNovelsByGenre(genre)
+    this.novelService.getNovelsByGenre(genre).subscribe(
+      (novelsByGenre)=>{
+        this.novelsByGenre=novelsByGenre
+      }
+    )
   }
 }

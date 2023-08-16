@@ -3,7 +3,7 @@ export interface Novel {
   name: string
   author: string
   review: string
-  imageLink: string
+  imageUrl: string
   genre: string
   rating: string
 }

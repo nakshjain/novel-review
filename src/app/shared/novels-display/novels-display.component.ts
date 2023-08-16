@@ -24,7 +24,11 @@ export class NovelsDisplayComponent implements OnInit{
   }
 
   getNovels(): void {
-    this.novels=this.novelService.getNovelsAll()
+    this.novelService.getNovelsAll().subscribe(
+      (novels)=>{
+        this.novels=novels
+      }
+    )
   }
   viewNovelDetails(novelId: string): void {
     this.router.navigate(['novel', novelId]); // Navigate to detail page with novel ID

@@ -17,6 +17,5 @@ export class NovelRatingComponent implements OnChanges{
     this.filledStars = Math.round(this.rating);
     const fractionalPart=this.rating - Math.floor(this.rating)
     this.hasHalfStar = fractionalPart<0.5 && fractionalPart!=0
-    console.log(this.rating, this.filledStars, this.hasHalfStar)
   }
 }
