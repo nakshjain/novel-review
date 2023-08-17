@@ -20,6 +20,8 @@ export class NovelsComponent implements OnInit{
   hideSelectBar: boolean=false
   @Input()
   hideSearchBar: boolean=false
+  @Input()
+  backgroundColor: string='lightblue'
 
   novels: Novel[]=[]
   searchText=''

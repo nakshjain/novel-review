@@ -13,6 +13,7 @@ export class NovelComponent implements OnInit{
   novel: any;
   novelsByGenre:Novel[]=[]
   titleSimilar='Similar Novels'
+  backgroundColor='#FFF0F5'
 
   constructor(private route: ActivatedRoute, private ngxService: NgxUiLoaderService, private novelService:NovelService) {
   }

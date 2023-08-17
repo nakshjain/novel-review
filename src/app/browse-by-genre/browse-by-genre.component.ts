@@ -10,6 +10,7 @@ export class BrowseByGenreComponent implements OnInit{
   title='Browse By '
   genreHeading='Genre'
   genre: any;
+  bgColor='lightbrown'
 
   constructor(private activatedRoute: ActivatedRoute) {
   }
