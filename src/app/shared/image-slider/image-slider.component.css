@@ -18,6 +18,7 @@
   color: #36180d;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .view-all-heading{
   text-align: center;
