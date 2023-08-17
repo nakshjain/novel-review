@@ -29,13 +29,13 @@ export class NovelService {
             const rawData = jsonResponse.table.rows;
             const formattedData = rawData.map((row: any) => {
               return {
-                name: row.c[0].v,
-                genre: row.c[1].v,
+                id: row.c[0].v,
+                name: row.c[1].v,
                 author: row.c[2].v,
-                rating: row.c[3].v,
-                review: row.c[4].v,
-                id: row.c[5].v,
-                imageUrl: row.c[6].v,
+                genre: row.c[3].v,
+                rating: row.c[4].v,
+                imageUrl: row.c[5].v,
+                review: row.c[6].v,
               };
             });
             this.dataSubject.next(formattedData)
