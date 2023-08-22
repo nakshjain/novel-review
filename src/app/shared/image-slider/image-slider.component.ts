@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {product} from "../../types/products.types";
+import {Novel} from "../../types/novels.types";
 import {Router} from "@angular/router";
 
 @Component({
@@ -29,12 +29,12 @@ export class ImageSliderComponent {
   @Input()
   title: string=''
   @Input()
-  products :product[]=[]
+  novels :Novel[]=[]
 
   constructor(private router: Router){
   }
 
-  viewproductDetails(productId: string): void {
-    this.router.navigate(['product', productId]); // Navigate to detail page with product ID
+  viewNovelDetails(novelId: string): void {
+    this.router.navigate(['novel', novelId]); // Navigate to detail page with novel ID
   }
 }

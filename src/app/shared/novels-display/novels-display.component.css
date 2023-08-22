@@ -1,24 +1,24 @@
-.products{
+.novels{
   padding: 0 0 2% 0;
   display: flex;
   flex-wrap: wrap;
 }
 
-.product{
+.novel{
   padding: 1%;
   overflow: hidden;
   max-width: calc(100%/7);
 }
-.product-image{
+.novel-image{
   width: 100%;
   object-fit: cover;
 }
-.product-image:hover{
+.novel-image:hover{
   transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
-  .product {
+  .novel {
     max-width: calc(100%/4);
   }
 }

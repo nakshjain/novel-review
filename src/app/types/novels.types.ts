@@ -1,4 +1,4 @@
-export interface product {
+export interface Novel {
   id: string
   name: string
   author: string
@@ -8,7 +8,7 @@ export interface product {
   rating: string
 }
 
-export interface productsByGenre {
+export interface NovelsByGenre {
   genre: string
-  products: product[]
+  novels: Novel[]
 }

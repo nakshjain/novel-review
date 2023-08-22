@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgxUiLoaderService} from "ngx-ui-loader";
-import {productsByGenre} from "../types/products.types";
-import {ProductService} from "../api/product.service";
+import {NovelsByGenre} from "../types/novels.types";
+import {NovelService} from "../api/novel.service";
 
 @Component({
   selector: 'app-home-page',
@@ -9,16 +9,16 @@ import {ProductService} from "../api/product.service";
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit{
-  allproductsByGenre: productsByGenre[]=[]
+  allNovelsByGenre: NovelsByGenre[]=[]
 
-  constructor(private ngxService: NgxUiLoaderService, private productService:ProductService) {
+  constructor(private ngxService: NgxUiLoaderService, private novelService:NovelService) {
   }
 
   ngOnInit(): void {
     this.ngxService.start()
-    this.productService.getAllproductsByGenre().subscribe(
-      (allproductsByGenre)=>{
-        this.allproductsByGenre=allproductsByGenre
+    this.novelService.getAllNovelsByGenre().subscribe(
+      (allNovelsByGenre)=>{
+        this.allNovelsByGenre=allNovelsByGenre
         this.ngxService.stop()
       }
     )

@@ -1,13 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {product} from "../types/products.types";
+import {Novel} from "../types/novels.types";
 import {NgxUiLoaderService} from "ngx-ui-loader";
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-novels',
+  templateUrl: './novels.component.html',
+  styleUrls: ['./novels.component.css']
 })
-export class ProductsComponent implements OnInit{
+export class NovelsComponent implements OnInit{
   @Input()
   title=''
 
@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit{
   @Input()
   backgroundColor: string='lightblue'
 
-  products: product[]=[]
+  novels: Novel[]=[]
   searchText=''
   genreSelect=''
 

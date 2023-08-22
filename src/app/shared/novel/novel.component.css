@@ -12,13 +12,13 @@ ngb-rating{
   font-size: 250%;
   padding: 2% 0;
 }
-.product {
+.novel {
   padding: 2% 0;
   margin: 0;
   text-align: center;
   justify-content: center;
 }
-.product-name {
+.novel-name {
   padding: 1% 0;
   color: #120E0A;
   font-size: 325%;
@@ -28,27 +28,27 @@ ngb-rating{
   font-size: 150%;
   font-style: italic;
 }
-.product-about {
+.novel-about {
   display: flex;
   flex-grow: 1;
   flex-direction: row;
   padding: 0 10%;
 }
 
-.product-image-main {
+.novel-image-main {
   padding: 2% 0;
   flex-grow: 1;
   width: 33%;
   height: auto;
 }
 
-.product-image {
+.novel-image {
   width: 100%;
   height: auto;
   border-radius: 5%;
 }
 
-.product-review {
+.novel-review {
   padding: 2% 5%;
   flex-grow: 1;
   width: 100%;
@@ -64,19 +64,19 @@ ngb-rating{
 }
 
 @media (max-width: 768px) {
-  .product-about {
+  .novel-about {
     flex-direction: column;
     align-items: center;
   }
-  .product-name {
+  .novel-name {
     padding: 2% 0;
     font-size: 200%;
   }
-  .product-image{
+  .novel-image{
     width: 100%;
     height: auto;
   }
-  .product-image-main{
+  .novel-image-main{
     width: 80%;
   }
 }

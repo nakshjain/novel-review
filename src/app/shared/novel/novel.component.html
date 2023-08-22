@@ -1,0 +1,22 @@
+<div class="novel" id="novel" [style.background]="backgroundColor">
+  <div class="novel-heading">
+    <div class="novel-name">{{novel.name}}</div>
+    <div class="author-name">By {{novel.author}}</div>
+  </div>
+  <div class="novel-about">
+    <div class="novel-image-main">
+      <img class="novel-image" src="{{ novel.imageUrl }}" alt="Image" />
+      <app-novel-rating
+        [rating]="novel.rating"
+      ></app-novel-rating>
+    </div>
+    <div class="novel-review">{{novel.review}}</div>
+  </div>
+  <div class="similar-slider">
+    <app-image-slider
+      [novels]="novelsByGenre"
+      [title]="titleSimilar"
+      [genre]="novel.genre"
+    ></app-image-slider>
+  </div>
+</div>

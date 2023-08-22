@@ -1,20 +1,20 @@
 import {Injectable} from '@angular/core';
-import {product, productsByGenre} from "../types/products.types";
+import {Novel, NovelsByGenre} from "../types/novels.types";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, map, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
-  private dataSubject: BehaviorSubject<product[]> = new BehaviorSubject<product[]>([]);
-  public products$: Observable<product[]> = this.dataSubject.asObservable();
+export class NovelService {
+  private dataSubject: BehaviorSubject<Novel[]> = new BehaviorSubject<Novel[]>([]);
+  public novels$: Observable<Novel[]> = this.dataSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    this.fetchproductData();
+    this.fetchNovelData();
   }
 
-  private fetchproductData(): void {
+  private fetchNovelData(): void {
     const documentId = '1th_UpZjn7ZlLwcD020TiWMGBhpqeUfj8CwhysNjS_r0';
     const exportUrl = `https://docs.google.com/spreadsheets/d/${documentId}/gviz/tq?tqx=out:json`;
 
@@ -47,32 +47,32 @@ export class ProductService {
         }
       },
       (error) => {
-        console.error('Error fetching product data:', error);
+        console.error('Error fetching novel data:', error);
       }
     );
   }
 
-  getproductsAll(): Observable<product[]> {
-    return this.products$;
+  getNovelsAll(): Observable<Novel[]> {
+    return this.novels$;
   }
 
-  getAllproductsByGenre(): Observable<productsByGenre[]> {
-    return this.products$.pipe(
+  getAllNovelsByGenre(): Observable<NovelsByGenre[]> {
+    return this.novels$.pipe(
       map(
-        (products)=>{
-          const productsByGenre: { [genre: string]: product[] } = {};
+        (novels)=>{
+          const novelsByGenre: { [genre: string]: Novel[] } = {};
 
-          products.forEach((product) => {
-            if (productsByGenre[product.genre]) {
-              productsByGenre[product.genre].push(product);
+          novels.forEach((novel) => {
+            if (novelsByGenre[novel.genre]) {
+              novelsByGenre[novel.genre].push(novel);
             } else {
-              productsByGenre[product.genre] = [product];
+              novelsByGenre[novel.genre] = [novel];
             }
           });
-          return Object.keys(productsByGenre).map(
+          return Object.keys(novelsByGenre).map(
             (genre) => ({
               genre,
-              products: productsByGenre[genre],
+              novels: novelsByGenre[genre],
             })
           );
         }
@@ -80,18 +80,18 @@ export class ProductService {
     )
   }
 
-  getproductById(id: string){
-    return this.products$.pipe(
-      map((products)=>{
-        return products.find(product=>product.id===id)
+  getNovelById(id: string){
+    return this.novels$.pipe(
+      map((novels)=>{
+        return novels.find(novel=>novel.id===id)
       })
     )
   }
 
-  getproductsByGenre(genre: string){
-    return this.products$.pipe(
-      map((products)=>{
-        return products.filter(product => product.genre === genre)
+  getNovelsByGenre(genre: string){
+    return this.novels$.pipe(
+      map((novels)=>{
+        return novels.filter(novel => novel.genre === genre)
       })
     )
   }

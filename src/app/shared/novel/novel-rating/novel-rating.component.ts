@@ -1,11 +1,11 @@
 import {Component, Input, OnChanges} from '@angular/core';
 
 @Component({
-  selector: 'app-product-rating',
-  templateUrl: './product-rating.component.html',
-  styleUrls: ['./product-rating.component.css']
+  selector: 'app-novel-rating',
+  templateUrl: './novel-rating.component.html',
+  styleUrls: ['./novel-rating.component.css']
 })
-export class ProductRatingComponent implements OnChanges{
+export class NovelRatingComponent implements OnChanges{
   @Input()
   rating!: number;
   stars!: number[];

@@ -13,32 +13,32 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ImageSliderComponent } from './shared/image-slider/image-slider.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgxUiLoaderModule} from "ngx-ui-loader";
-import {ProductsComponent} from "./shared/products.component";
-import {ProductComponent} from './shared/product/product.component';
+import {NovelsComponent} from "./shared/novels.component";
+import {NovelComponent} from './shared/novel/novel.component';
 import {FormsModule} from "@angular/forms";
 import { FilterComponent } from './shared/filter/filter.component';
 import { FollowUsComponent } from './follow-us/follow-us.component';
 import { BrowseByGenreComponent } from './browse-by-genre/browse-by-genre.component';
-import { AllProductsComponent } from './all-products/all-products.component';
-import { ProductsDisplayComponent } from './shared/products-display/products-display.component';
+import { AllNovelsComponent } from './all-novels/all-novels.component';
+import { NovelsDisplayComponent } from './shared/novels-display/novels-display.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
-import {ProductRatingComponent} from "./shared/product/product-rating/product-rating.component";
+import {NovelRatingComponent} from "./shared/novel/novel-rating/novel-rating.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     ImageSliderComponent,
-    ProductsComponent,
-    ProductComponent,
+    NovelsComponent,
+    NovelComponent,
     FilterComponent,
     FollowUsComponent,
     BrowseByGenreComponent,
-    AllProductsComponent,
-    ProductsDisplayComponent,
-    ProductRatingComponent,
+    AllNovelsComponent,
+    NovelsDisplayComponent,
+    NovelRatingComponent,
   ],
   imports: [
     BrowserModule,
