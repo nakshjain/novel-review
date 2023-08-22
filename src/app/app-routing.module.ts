@@ -6,17 +6,17 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import {HomePageComponent} from "./home-page/home-page.component";
-import {NovelComponent} from "./shared/novel/novel.component";
+import {ProductComponent} from "./shared/product/product.component";
 import {BrowseByGenreComponent} from "./browse-by-genre/browse-by-genre.component";
-import {AllNovelsComponent} from "./all-novels/all-novels.component";
+import {AllProductsComponent} from "./all-products/all-products.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'genre', component: BrowseByGenreComponent},
-  { path: 'novels', component: AllNovelsComponent},
+  { path: 'products', component: AllProductsComponent},
   { path: 'genre/:genre', component: BrowseByGenreComponent},
-  { path: 'novel/:id', component: NovelComponent}
+  { path: 'product/:id', component: ProductComponent}
 ];
 
 @NgModule({

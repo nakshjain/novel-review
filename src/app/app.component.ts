@@ -19,9 +19,9 @@ export class AppComponent {
       link: 'genre',
     },
     {
-      id: 'novels',
-      name: 'Novels',
-      link: 'novels',
+      id: 'products',
+      name: 'products',
+      link: 'products',
     },
   ];
 }
